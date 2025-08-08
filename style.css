@@ -1,5 +1,4 @@
-
-  /* Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -28,25 +27,17 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
+/* Removed glass effect */
 .container {
   width: 100%;
   max-width: 600px;
-  background: rgba(0, 0, 0, 0.4);
   padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-/* Hero section with glassmorphism */
+/* No glass styling on hero */
 .hero {
-  background: rgba(255, 255, 255, 0.1); 
-  backdrop-filter: blur(10px); 
-  -webkit-backdrop-filter: blur(10px); 
-  border-radius: 15px; 
-  border: 1px solid rgba(255, 255, 255, 0.2); 
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
   padding: 20px;
-  color: white; 
+  color: white;
 }
 
 /* Logo */

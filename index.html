@@ -2,31 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Just Speak</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Font Awesome for social icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
-  <div class="container">
- 
-      <div class="content">
-        <img src="logo.jpeg" alt="Just Speak Logo" class="logo">
-        <h1>Just Speak</h1>
-        <p class="tagline">Speak confidently, Anytime, Anywhere</p>
+  <div class="container" role="main" aria-label="Just Speak homepage">
+    
+    <!-- TOP SECTION -->
+    <header class="top-section">
+      <img src="logo.jpeg" alt="Just Speak Logo" class="logo" loading="lazy" />
+      <h1>Just Speak</h1>
+      <p class="tagline">Speak confidently, Anytime, Anywhere</p>
+    </header>
 
-        <div class="social-links">
-          <a href="https://www.facebook.com/hama201732">Facebook</a><br>
-          <a href="https://www.tiktok.com/@englishwithmhamad">TikTok</a><br>
-          <a href="https://www.instagram.com/english_with.mhamad/">Instagram</a>
-        </div>
+    <!-- BOTTOM SECTION -->
+    <section class="bottom-section">
+      <nav class="social-links" aria-label="Social media links">
+        <a href="https://www.facebook.com/hama201732" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook
+        </a>
+        <a href="https://www.tiktok.com/@englishwithmhamad" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-tiktok" aria-hidden="true"></i> TikTok
+        </a>
+        <a href="https://www.instagram.com/english_with.mhamad/" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
+        </a>
+      </nav>
 
-        <p class="contact">
-          Contact me on WhatsApp and Instagram: 
-          <a href="tel:+9647512179607">0751 217 9607</a>
-        </p>
-      </div>
-   
+      <p class="contact">
+        <span class="contact-text">
+          Contact me on 
+          <i class="fab fa-whatsapp" aria-hidden="true" style="color:#25D366; margin-left:5px;"></i> WhatsApp
+          and 
+          <i class="fab fa-telegram" aria-hidden="true" style="color:#0088cc; margin-left:5px;"></i> Telegram:
+        </span>
+        <a href="tel:+9647512179607" class="contact-number">0751 217 9607</a>
+      </p>
+    </section>
+
   </div>
 </body>
 </html>

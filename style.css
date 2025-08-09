@@ -9,16 +9,19 @@
 html, body {
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
   background: linear-gradient(-45deg, #ff6e7f, #bfe9ff, #ffecd2, #fcb69f);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
   overflow-x: hidden;
-  text-align: center;
+}
+
+/* Center the container vertically and horizontally */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
 }
 
 @keyframes gradient {
@@ -27,40 +30,60 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
-/* Removed glass effect */
+/* Main container */
 .container {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 600px;
-  padding: 25px;
+  width: 100%;
+  min-height: 450px;          /* prevent too small height */
+  padding: 40px 30px;         /* comfortable padding */
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: transform 0.3s ease;
 }
 
-/* No glass styling on hero */
-.hero {
-  padding: 20px;
-  color: white;
+.container:hover {
+  transform: scale(1.02);
 }
 
-/* Logo */
+/* TOP SECTION */
+.top-section {
+  margin-bottom: 30px;
+}
+
 .logo {
   height: 6em;
   width: 6em;
-  border: 1px solid #333;
+  border: 2px solid #333;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
 }
 
-/* Heading */
+.logo:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  font-weight: bold;
+  font-size: 2.75rem;
+  font-weight: 900;
+  margin-bottom: 12px;
   background: linear-gradient(270deg, #00f, #f0f, #ff69b4, #00f);
   background-size: 600% 600%;
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
   animation: moveGradient 5s ease infinite;
+  user-select: none;
 }
 
 @keyframes moveGradient {
@@ -69,88 +92,140 @@ h1 {
   100% { background-position: 0% 50%; }
 }
 
-/* Tagline */
 .tagline {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 600;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #00bfff, #007bff, #1e90ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  user-select: none;
+}
+
+/* BOTTOM SECTION */
+.bottom-section {
+  width: 100%;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #00bfff, #007bff, #1e90ff);
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
-/* Text gradient */
-p, a {
-  background: linear-gradient(135deg, #00bfff, #007bff, #1e90ff);
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-}
-
-/* Social links */
 .social-links a {
-  font-size: 1.2rem;
-  margin: 5px 0;
-  display: block;
-  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 25px;
+  font-size: 1.3rem;
+  color: white;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  border: none;
+  box-shadow: 0 6px 15px rgba(106, 17, 203, 0.5);
+  transition: background-position 0.5s ease, transform 0.25s ease, box-shadow 0.3s ease;
+  background-size: 200% 200%;
+  cursor: pointer;
+  user-select: none;
 }
 
-.social-links a:hover {
-  transform: scale(1.05);
+.social-links a:hover,
+.social-links a:focus {
+  background-position: 100% 0;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(37, 117, 252, 0.7);
+  outline: none;
+}
+
+.social-links i {
+  font-size: 1.4em;
 }
 
 /* Contact section */
 .contact {
-  margin-top: 20px;
-  font-size: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00c6ff, #0072ff, #00f260);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s ease-in-out infinite;
+  text-shadow: 0 0 8px rgba(0, 194, 255, 0.7);
+  user-select: text;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-/* Responsive styles */
+.contact-number {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #003366;
+  font-weight: 800;
+  box-shadow: 0 0 10px #00f260aa;
+  transition: background 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-number:hover,
+.contact-number:focus {
+  background: #00f260;
+  color: white;
+  box-shadow: 0 0 15px #00f260ff;
+  outline: none;
+}
+
+@keyframes shine {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  .tagline {
-    font-size: 1.2rem;
-  }
-
-  .logo {
-    height: 5em;
-    width: 5em;
-  }
-
-  .contact {
-    font-size: 0.95rem;
+  h1 { font-size: 2.2rem; }
+  .tagline { font-size: 1.3rem; }
+  .logo { height: 5.5em; width: 5.5em; }
+  .social-links a { font-size: 1.1rem; padding: 10px 20px; }
+  .contact { font-size: 1.1rem; }
+  .container {
+    min-height: 400px;
+    padding: 35px 25px;
   }
 }
 
 @media (max-width: 480px) {
+  .logo { height: 4.5em; width: 4.5em; }
+  h1 { font-size: 1.8rem; }
+  .tagline { font-size: 1.1rem; }
+  .social-links {
+    gap: 12px;
+  }
+  .social-links a {
+    font-size: 1rem;
+    padding: 9px 16px;
+  }
   .container {
-    padding: 15px;
-  }
-
-  .logo {
-    height: 4.5em;
-    width: 4.5em;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .tagline {
-    font-size: 1.1rem;
-  }
-
-  .contact {
-    font-size: 0.9rem;
+    padding: 30px 20px;
+    min-height: 380px;
+    max-width: 90vw;
   }
 }
